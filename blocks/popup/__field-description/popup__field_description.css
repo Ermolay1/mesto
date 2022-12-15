@@ -1,0 +1,10 @@
+.popup__field-description {
+    margin: 0 auto 48px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 580px) {
+    .popup__field-description {
+      margin: 0 auto 45px;
+    }
+  }
