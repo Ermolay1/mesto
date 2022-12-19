@@ -5,6 +5,7 @@
     margin-right: 0;
     margin-left: auto;
     background-image: url(../../../images/like.png);
+    background-repeat: no-repeat;
     background-color: transparent;
     cursor: pointer;
     border: none;
