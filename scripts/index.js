@@ -1,17 +1,18 @@
- const profilebuttun = document.querySelector('.profile__button');
- const profilepopup = document.querySelector('.profile-popup');
- const profileclosepopup = profilepopup.querySelector('.popup__close-popup');
+ const profilepopup = document.querySelector('.popup');
+ const profilebuttun = document.querySelector('.profile__edit-button');
+ 
+ const profileClosePopup = profilepopup.querySelector('.popup__close-popup');
  
 
  profilebuttun.addEventListener('click', () =>{
 
-    profilepopup.classList.add('popup__active');
+    profilepopup.classList.add('popup_opened');
 
  } );
 
- profileclosepopup.addEventListener('click',() =>{
+ profileClosePopup.addEventListener('click',() =>{
     
-    profilepopup.classList.remove('popup__active');
+    profilepopup.classList.remove('popup_opened');
 });
 
 const buttonSave  = document.querySelector('.popup__button-save');
@@ -22,8 +23,8 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 
 function save(evt) {
    evt.preventDefault();
-   profilepopup.classList.remove('popup__active');
+   profilepopup.classList.remove('popup_opened');
    profileTitle.textContent = popupFieldName.value;
    profileSubtitle.textContent = fieldDescription.value;
 };
-buttonSave.addEventListener('click', save,);
+buttonSave.addEventListener('click', save);

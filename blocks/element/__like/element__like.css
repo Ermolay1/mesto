@@ -4,7 +4,7 @@
     margin-top: 0;
     margin-right: 0;
     margin-left: auto;
-    background-image: url(../../../images/like.png);
+    background-image: url(../../../images/like.svg);
     background-repeat: no-repeat;
     background-color: transparent;
     cursor: pointer;
@@ -15,5 +15,5 @@
     opacity: 0.6;
 }
 .element__like:active{
-    background-image: url(../../../images/like-blac.png);
+    background-image: url(../../../images/like_blac.svg);
 }

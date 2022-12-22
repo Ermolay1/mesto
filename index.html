@@ -9,68 +9,68 @@
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/header__logo.png" alt="логотип место">
+        <img class="header__logo" src="./images/header-logo.svg" alt="логотип место">
     </header>
     <main class="content">
          <section class="profile">
-            <div class="profile__avatar">
+            
                  <img class="profile__image" src="./images/image.jpg" alt="Фото Жак-Ив Кусто">
-            </div>
+
             <div class="profile__info">
                 <div class="profile__container">
                    <h1 class="profile__title">Жак-Ив Кусто</h1>
-                   <div class="profile__button">
-                      <img class="profile__button-image" src="./images/Vector.png" alt="карандаш">
-                   </div>   
+                   <button type="button" class="profile__edit-button">
+                      <img class="profile__button-image" src="./images/pencil.svg" alt="карандаш">
+                   </button>   
                 </div>
-                <p  class="profile__subtitle">Исследователь океана</p>
+                <h2 class="profile__subtitle">Исследователь океана</h2>
                 
             </div>
-            <button class="profile__addbutton"> <img src="./images/plus.png" alt="плюс"></button>
+            <button class="profile__addbutton"> <img src="./images/plus.svg" alt="плюс"></button>
          </section>
          <section >
             <ul class="elements">
                 <li class="element">
-                    <img class="element__image" src="./images/karachaevsk.jpg" alt="карачаевск">
+                    <article ><img class="element__image" src="./images/karachaevsk.jpg" alt="карачаевск"></article>
                     <div class="element__column">
-                        <p class="element__text">Карачаевск</p>
-                        <button class="element__like"></button>
+                        <h2 class="element__text">Карачаевск</h2>
+                        <button type="button" class="element__like"></button>
 
                     </div>
                 </li>
                 <li class="element">
-                    <img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус">
+                    <article><img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус"></article>
                     <div class="element__column">
                       <h2 class="element__text">Гора Эльбрусс</h2>
-                      <button class="element__like"></button>
+                      <button type="button" class="element__like"></button>
                     </div>
                 </li>
                 <li class="element">
-                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
+                    <article><img class="element__image" src="./images/dombai.png" alt="Домбай"></article>
                     <div class="element__column">
                        <h2 class="element__text">Домбай</h2>
-                       <button class="element__like"></button>
+                       <button type="button" class="element__like"></button>
                     </div>
                 </li>
                 <li class="element">
-                    <img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус">
+                    <article><img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус"></article>
                     <div class="element__column">
                       <h2 class="element__text">Гора Эльбрусс</h2>
-                      <button class="element__like"></button>
+                      <button type="button" class="element__like"></button>
                     </div>
                 </li>
                 <li class="element">
-                    <img class="element__image" src="./images/dombai.png" alt="Домбай">
+                    <article><img class="element__image" src="./images/dombai.png" alt="Домбай"></article>
                     <div class="element__column">
                       <h2 class="element__text">Домбай</h2>
-                      <button class="element__like"></button>
+                      <button type="button" class="element__like"></button>
                     </div>
                 </li>
                 <li class="element">
-                    <img class="element__image" src="./images/karachay-cherkessia.png" alt="Карачаево-Черкеск">
+                    <article><img class="element__image" src="./images/mountain_elbrus.png" alt="Карачаево-Черкеск"></article>
                     <div class="element__column">
                       <h2 class="element__text">Карачаево-Черкеск</h2>
-                      <button class="element__like"></button>
+                      <button type="button" class="element__like"></button>
                     </div>
                 </li>
             </ul>
@@ -79,22 +79,23 @@
          
    
     <footer class="footer">
-        <img class="footer__image" src="./images/©2020Mesto_Russia.png" alt="место Россия">
+        <h3 class="footer__name">&copy;2020Mesto Russia</h3>
+    
    
     </footer>
-    <section class="popup profile-popup">
+    <section class="popup ">
         <div class="popup__container">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form">
-                <input type="text"  class="input popup__field-name" value="Жак-Ив Кусто" name="name">
-                <input type="text"  class="input popup__field-description" value="Исследователь океана" name="description">
+            <h3 class="popup__title">Редактировать&nbsp;профиль</h3>
+            <form name="form-profile" class="popup__form">
+                <input type="text"  class="popup__field popup__field-name" value="Жак-Ив Кусто" name="name">
+                <input type="text"  class="popup__field popup__field-description" value="Исследователь океана" name="description">
                 <button type="submit"  class="popup__button-save" name="submit">Сохранить</button>
             </form>
             <button type="button" class="popup__close-popup"></button>
         </div>
 
      </section>
-    <script src="./js/index.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 
