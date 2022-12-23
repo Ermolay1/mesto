@@ -9,12 +9,13 @@
     grid-column: 2;
     transition: opacity 0.6s;
 }
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 970px) {
     .profile__addbutton{
         margin-left: 30px;
     }
 }
-@media screen and (max-width: 590px) {
+
+@media screen and (max-width: 690px) {
     .profile__addbutton{
         width: 282px;
         margin-left: 0;
