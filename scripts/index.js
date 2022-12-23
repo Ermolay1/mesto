@@ -16,14 +16,14 @@
 });
 
 const buttonSave  = document.querySelector('.popup__button-save');
-const popupFieldName = document.querySelector('.popup__field-name');
+const popupFieldName = document.querySelector('.popup__input_name');
 const profileTitle = document.querySelector('.profile__title');
-const fieldDescription = document.querySelector('.popup__field-description');
+const fieldDescription = document.querySelector('.popup__input_description');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
 function save(evt) {
    evt.preventDefault();
-   profilepopup.classList.remove('popup_opened');
+   profilepopup.classList.add(profileClosePopup);
    profileTitle.textContent = popupFieldName.value;
    profileSubtitle.textContent = fieldDescription.value;
 };

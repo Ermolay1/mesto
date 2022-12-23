@@ -1,4 +1,4 @@
-.popup__field{
+.popup__input{
     width: 358px;
     height: 27px;
     padding-bottom: 13px;
@@ -9,17 +9,17 @@
     line-height: 17px;
     margin: 0 auto 30px;
 }
-.popup__field:last-child{
+.popup__input:last-child{
     margin: 0 auto 48px;
     padding: 0;
   
 }
 @media screen and (max-width: 590px) {
-    .popup__field{
+    .popup__input{
         width: 238px;
         height: 14px;
     }
-    .popup__field:last-child {
+    .popup__input:last-child {
         margin: 0 auto 45px;
 }
 }
