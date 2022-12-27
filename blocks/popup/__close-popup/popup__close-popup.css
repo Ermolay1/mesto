@@ -1,10 +1,10 @@
 .popup__close-popup{
     position: relative;
-    bottom: calc(330px + 16px + 32px);
+    bottom: calc(330px + 16px + 40px);
     left: calc(430px + 8px);
     width: 32px;
     height: 32px;
-    background-image: url(../../../images/Close\ Icon.svg);
+    background-image: url(../../../images/close-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: none;
