@@ -7,11 +7,10 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
-    margin: 0 auto 30px;
+    margin: 0 auto 15px;
 }
 .popup__input:nth-child(2) {
-    margin-bottom: 48px;
-    padding: 0;
+    margin-bottom: 43px;
   
 }
 @media screen and (max-width: 590px) {
