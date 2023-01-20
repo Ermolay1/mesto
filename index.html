@@ -29,48 +29,6 @@
          </section>
          <section >
               <ul class="elements">
-                  <li class="element">
-                      <img class="element__image" src="./images/karachaevsk.jpg" alt="карачаевск">
-                      <div class="element__column">
-                           <h2 class="element__text">Карачаевск</h2>
-                           <button type="button" class="element__like"></button>
-                      </div>
-                  </li>
-                  <li class="element">
-                     <img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус">
-                     <div class="element__column">
-                        <h2 class="element__text">Гора Эльбрусс</h2>
-                        <button type="button" class="element__like"></button>
-                     </div>
-                  </li>
-                  <li class="element">
-                     <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                     <div class="element__column">
-                        <h2 class="element__text">Домбай</h2>
-                        <button type="button" class="element__like"></button>
-                     </div>
-                  </li>
-                  <li class="element">
-                      <img class="element__image" src="./images/mountain_elbrus.png" alt="гора Эльбрус">
-                      <div class="element__column">
-                         <h2 class="element__text">Гора Эльбрусс</h2>
-                         <button type="button" class="element__like"></button>
-                      </div>
-                  </li>
-                  <li class="element">
-                       <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                       <div class="element__column">
-                          <h2 class="element__text">Домбай</h2>
-                          <button type="button" class="element__like"></button>
-                        </div>
-                  </li>
-                  <li class="element">
-                       <img class="element__image" src="./images/mountain_elbrus.png" alt="Карачаево-Черкеск">
-                       <div class="element__column">
-                          <h2 class="element__text">Карачаево-Черкеск</h2>
-                          <button type="button" class="element__like"></button>
-                       </div>
-                  </li>
               </ul>
           </section>
      </main>     
@@ -88,6 +46,34 @@
              <button type="button" class="popup__close-popup"></button>
           </div>
        </section>
+       <section class="popup popup-element">
+         <div class="popup__container">
+            <h3 class="popup__title">Новое&nbsp;место</h3>
+            <form name="form-profile" class="popup__form popup-element__form">
+                <input type="text"  class="popup__input popup-element__input_value_name" value="Название" name="input-name">
+                <input type="text"  class="popup__input popup-element__input_value_link" value="Ссылка на картинку" name="input-link">
+                <button type="submit"  class="popup__button-save popup-element__button-save" name="submit">Создать</button>
+            </form>
+            <button type="button" class="popup__close-popup popop-element__close-popup"></button>
+         </div>
+       </section>
+       <section class="popup popup-image">
+         <figure class="popup-image__container">
+            <button type="button" class=" popup-image__close-popup"></button>
+            <img class="popup-image__image " src="#" alt="#">
+            <h5 class="popup-image__name"></h5>
+         </figure>
+       </section>
+       <template class="element__cards">
+         <li class="element">
+            <img class="element__image" src="#" alt="#">
+            <div class="element__column">
+                 <h2 class="element__text">text</h2>
+                 <button type="button" class="element__like"></button>
+            </div>
+            <button type="button" class="element__delete-element"></button>
+        </li>
+       </template>
       <script src="./scripts/index.js"></script>
   </body>
 </html>
