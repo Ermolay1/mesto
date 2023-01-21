@@ -71,13 +71,13 @@ const initialCards = [
                       .content
                       .querySelector('.element');
   
-  const popupElementLink = document.querySelector('.popup-element__form_input_value_name');
+  const popupElementLink = document.querySelector('.popup__form_input_value_name');
   const form = document.querySelector('.popup-element__form');
-  const formText = form.querySelector('.popup-element__form_input_value_name');
-  const formLink = form.querySelector('.popup-element__form_input_value_link');                 
+  const formText = form.querySelector('.popup__form_input_value_name');
+  const formLink = form.querySelector('.popup__form_input_value_link');                 
   const popupElement = document.querySelector('.popup-element');
   const openElement = document.querySelector('.profile__addbutton');
-  const closeElement = document.querySelector('.popop-element__close');
+  const closeElement = document.querySelector('.popop__close');
   
 
    function openPopupElement() {
