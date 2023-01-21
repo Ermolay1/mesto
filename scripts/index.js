@@ -77,7 +77,7 @@ const initialCards = [
   const formLink = form.querySelector('.popup-element__input-value-link');                 
   const popupElement = document.querySelector('.popup-element');
   const openElement = document.querySelector('.profile__addbutton');
-  const closeElement = document.querySelector('.popup-element__button-close-popup');
+  const closeElement = document.querySelector('.popup-element__button-save-popup');
   
 
    function openPopupElement() {
