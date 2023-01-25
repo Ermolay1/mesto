@@ -51,12 +51,12 @@ popupForm.addEventListener('submit', save);
                       .querySelector('.element');
   
   const popupElementLink = document.querySelector('.popup_type_element_input-value-name');
-  const form = document.querySelector('.popup_type_element_form');
-  const formText = form.querySelector('.popup_type_element_input-value-name');
-  const formLink = form.querySelector('.popup_type_element_input-value-link');                 
+  const form = document.querySelector('.popup__form_type_mesto');
+  const formText = form.querySelector('.popup__input_type_value-name');
+  const formLink = form.querySelector('.popup__input_type_value-link');                 
   const popupElement = document.querySelector('.popup_type_element');
   const openElement = document.querySelector('.profile__addbutton');
-  const closeElement = document.querySelector('.popup_type_element_button-save-popup');
+  const closeElement = document.querySelector('.popup__button-save_type_mesto');
   
    
    
