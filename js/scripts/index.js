@@ -94,10 +94,10 @@ popupForm.addEventListener('submit', save);
      
       const popupImag = document.querySelector('.popup_type_image');
       const openImage = card.querySelector('.element__image');
-      const image = popupImag.querySelector('.popup_type_image_image');
-      const closeImage = popupImag.querySelector('.popup_type_image_close-popup');
+      const image = popupImag.querySelector('.popup__image');
+      const closeImage = popupImag.querySelector('.popup__button-close');
       const textImage = card.querySelector('.element__text');
-      const nameImage = popupImag.querySelector('.popup_type_image_name');
+      const nameImage = popupImag.querySelector('.popup__image-name');
    
     
     

@@ -1,16 +1,16 @@
-.popup_type_image_close-popup{
+.popup__button-close{
     width: 32px;
     height: 32px;
     margin-left: calc(75vw + 8px);
     margin-bottom: 8px;
-    background-image: url(../../../../images/close-icon.svg);
+    background-image: url(../../../images/close-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: none;
     background-color: black;
 }
 @media screen and (max-width: 590px ) {
-   .popup_type_image_close-popup{
+   .popup__button-close{
      width: 20px;
      height: 20px;
      background-size: 20px;
