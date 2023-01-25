@@ -50,13 +50,13 @@ popupForm.addEventListener('submit', save);
                       .content
                       .querySelector('.element');
   
-  const popupElementLink = document.querySelector('.popup-element__input-value-name');
-  const form = document.querySelector('.popup-element__form');
-  const formText = form.querySelector('.popup-element__input-value-name');
-  const formLink = form.querySelector('.popup-element__input-value-link');                 
+  const popupElementLink = document.querySelector('.popup_type_element_input-value-name');
+  const form = document.querySelector('.popup_type_element_form');
+  const formText = form.querySelector('.popup_type_element_input-value-name');
+  const formLink = form.querySelector('.popup_type_element_input-value-link');                 
   const popupElement = document.querySelector('.popup_type_element');
   const openElement = document.querySelector('.profile__addbutton');
-  const closeElement = document.querySelector('.popup-element__button-save-popup');
+  const closeElement = document.querySelector('.popup_type_element_button-save-popup');
   
    
    
@@ -94,10 +94,10 @@ popupForm.addEventListener('submit', save);
      
       const popupImag = document.querySelector('.popup_type_image');
       const openImage = card.querySelector('.element__image');
-      const image = popupImag.querySelector('.popup-image__image');
-      const closeImage = popupImag.querySelector('.popup-image__close-popup');
+      const image = popupImag.querySelector('.popup_type_image_image');
+      const closeImage = popupImag.querySelector('.popup_type_image_close-popup');
       const textImage = card.querySelector('.element__text');
-      const nameImage = popupImag.querySelector('.popup-image__name');
+      const nameImage = popupImag.querySelector('.popup_type_image_name');
    
     
     

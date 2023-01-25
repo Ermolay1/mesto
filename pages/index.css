@@ -32,9 +32,9 @@
 @import url(../blocks/popup/__close-popup/popup__close-popup.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup-image/__image/popup-image__image.css);
-@import url(../blocks/popup-image/__name/popup-image__name.css);
-@import url(../blocks/popup-image/__close-popup/popup-image__close-popup.css);
-@import url(../blocks/popup-image/__container/popup-image__container.css);
 @import url(../blocks/popup/_type/_image/popup_type_image.css);
+@import url(../blocks/popup/_type/_name/popup_type_image_name.css);
+@import url(../blocks/popup/_type/_close-popup/popup_type_image_close-popup.css);
+@import url(../blocks/popup/_type/_container/popup_type_image_container.css);
+@import url(../blocks/popup/_type/_image_image/popup_type_image_image.css);
 @import url(../blocks/profile/__addbutton-image/profile__addbutton-image.css);
