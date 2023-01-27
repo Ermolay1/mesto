@@ -9,6 +9,24 @@ const profileTitle = document.querySelector('.profile__title');
 const inputDescription = document.querySelector('.popup__input_value_description');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const popupForm = document.querySelector('.popup__form');
+const cardsContainer = document.querySelector('.elements');
+const cardTemplate = document
+                     .querySelector('.element__cards')
+                     .content
+                     .querySelector('.element');
+ 
+ const popupElementLink = document.querySelector('.popup_type_element_input-value-name');
+ const form = document.querySelector('.popup__form_type_mesto');
+ const formText = form.querySelector('.popup__input_type_value-name');
+ const formLink = form.querySelector('.popup__input_type_value-link');                 
+ const popupElement = document.querySelector('.popup_type_element');
+ const openElement = document.querySelector('.profile__addbutton');
+ const saveElement = document.querySelector('.popup__button-save_type_mesto');
+ const closeElement = document.querySelector('.popup__close-popup_type_mesto');
+ const popupImag = document.querySelector('.popup_type_image');
+ const nameImage = popupImag.querySelector('.popup__image-name');
+ const image = popupImag.querySelector('.popup__image');
+
 
 
 function openPopup(popup){
@@ -22,98 +40,71 @@ function closePopup(popup){
 
    profilebuttun.addEventListener('click',function() {
        openPopup(profilepopup);
-       inputName.value = profileTitle.textContent;
-       inputDescription.value = profileSubtitle.textContent;
-     }
+     inputName.value = profileTitle.textContent;
+     inputDescription.value = profileSubtitle.textContent;  
+   }
    );
    profileClosePopup.addEventListener('click',function() {
     closePopup(profilepopup);
   });
    
 
-
-function save(evt) {
-   evt.preventDefault();
-  
+function save(e) {
+   e.preventDefault();
    profileTitle.textContent = inputName.value;
    profileSubtitle.textContent = inputDescription.value;
-   closePopup();
+   closePopup(profilepopup);
 };
 
-popupForm.addEventListener('submit', save);
+buttonSave.addEventListener('click', save);
 
-// Практическая 5
-
- const cardsContainer = document.querySelector('.elements');
- const cardTemplate = document
-                      .querySelector('.element__cards')
-                      .content
-                      .querySelector('.element');
-  
-  const popupElementLink = document.querySelector('.popup_type_element_input-value-name');
-  const form = document.querySelector('.popup__form_type_mesto');
-  const formText = form.querySelector('.popup__input_type_value-name');
-  const formLink = form.querySelector('.popup__input_type_value-link');                 
-  const popupElement = document.querySelector('.popup_type_element');
-  const openElement = document.querySelector('.profile__addbutton');
-  const closeElement = document.querySelector('.popup__button-save_type_mesto');
-  
-   
-   
-   openElement.addEventListener('click', function (){
+openElement.addEventListener('click', function (){
   openPopup(popupElement);
    });
-   closeElement.addEventListener('click', function() {
-     closePopup(popupElement)
-    });
 
+   closeElement.addEventListener('click', function() {
+     closePopup(popupElement);
+    });
     
+    function deleteCard(evt) {
+      evt.target.closest(".element").remove();
+     }
+
+     function likeCard(evt){
+      evt.target.classList.toggle('element__like-active');
+     }
+
+     function openImagePopup(cardImage) {
+      
+      image.src = cardImage.src;
+      image.alt = cardImage.alt;
+      nameImage.textContent = cardImage.alt;
+      openPopup(popupImag);
+     };
 
     function createCard(item) {
       const card = cardTemplate.cloneNode(true);
-      card.querySelector('.element__image').src = item.link;
-      card.querySelector('.element__image').alt = item.name;
-      card.querySelector('.element__text').textContent = item.name;
-      
+      const cardImage = card.querySelector('.element__image');
       const deleteButton = card.querySelector('.element__delete-element');
-   
-      function deleteCard() {
-        deleteButton.closest('.element').remove();
-      }
-    
-      deleteButton.addEventListener('click', deleteCard);
-      
-   
+      const closeImage = popupImag.querySelector('.popup__button-close');
       const likeButton = card.querySelector('.element__like');
       
-     function likeCard(){
-      likeButton.classList.toggle('element__like-active');
-     }
-     likeButton.addEventListener('click', likeCard);
-     
-     
-      const popupImag = document.querySelector('.popup_type_image');
-      const openImage = card.querySelector('.element__image');
-      const image = popupImag.querySelector('.popup__image');
-      const closeImage = popupImag.querySelector('.popup__button-close');
-      const textImage = card.querySelector('.element__text');
-      const nameImage = popupImag.querySelector('.popup__image-name');
-   
+      card.querySelector('.element__text').textContent = item.name;
+      cardImage.src = item.link;
+      cardImage.alt = item.name; 
     
     
-     openImage.addEventListener('click', function() {
-      openPopup(popupImag);
-      image.src = openImage.getAttribute('src');
-      image.alt = textImage.textContent;
-      nameImage.textContent = textImage.textContent;
-     });
-
+      cardImage.addEventListener('click', () => {
+      openImagePopup(cardImage);
+     })
 
      closeImage.addEventListener('click', function () {
       closePopup(popupImag);
      });
        
+      deleteButton.addEventListener('click', deleteCard);
       
+      likeButton.addEventListener('click', likeCard);
       return card;
     }
    
@@ -127,6 +118,7 @@ popupForm.addEventListener('submit', save);
      
      renderCard();
 
+      
      form.addEventListener('submit', (e) => {
       e.preventDefault();
       const newCard = [
@@ -138,6 +130,18 @@ popupForm.addEventListener('submit', save);
         closePopup(popupElement);
         e.target.reset();
      })
+
+    
+
+
+
+  
+
+
+   
+   
+  
+      
 
   
 
