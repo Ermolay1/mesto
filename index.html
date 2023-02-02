@@ -38,10 +38,12 @@
        <section class="popup popup_type_profile ">
           <div class="popup__container">
              <h3 class="popup__title">Редактировать&nbsp;профиль</h3>
-             <form name="form-profile" class="popup__form">
-                 <input type="text"  class="popup__input popup__input_value_name" value="Жак-Ив Кусто" name="input-name">
-                 <input type="text"  class="popup__input popup__input_value_description" value="Исследователь океана" name="input-description">
-                 <button type="submit"  class="popup__button-save" name="submit">Сохранить</button>
+             <form name="profile-form" class="popup__form" novalidate>
+                 <input type="text"  class="popup__input popup__input_value_name" value="Жак-Ив Кусто" name="input-name" placeholder="Введите имя" id="popup__name" minlength="2" maxlength="40" required>
+                 <span class="popup__input-error popup__name-error popup__input-error_active">Минимаоьное количество символов: 2. Длина текста сейчас: 1&nbsp;символ.</span>
+                 <input type="text"  class="popup__input popup__input_value_description" value="Исследователь океана" name="input-description" id="popup__description" placeholder="Введите описание" minlength="2" maxlength="200" required>
+                 <span class="popup__input-error popup__description-error">fd</span>
+                 <button type="submit"  class="popup__button popup__button-save" name="submit">Сохранить</button>
              </form>
              <button type="button" class="popup__close-popup"></button>
           </div>
@@ -49,10 +51,12 @@
        <div class="popup popup_type_element">
          <div class="popup__container">
             <h3 class="popup__title">Новое&nbsp;место</h3>
-            <form name="form-profile" class="popup__form popup__form_type_mesto">
-                <input type="text"  class="popup__input popup__input_type_value-name" placeholder="Название" name="input-name">
-                <input type="text"  class="popup__input popup__input_type_value-link" placeholder="Ссылка на картинку" name="input-link">
-                <button type="submit"  class="popup__button-save popup__button-save_type_mesto" name="submit">Создать</button>
+            <form name="mesto-form" class="popup__form popup__form_type_mesto" novalidate>
+                <input type="text"  class="popup__input popup__input_type_value-name" placeholder="Название" name="input-name" id="popup__img" minlength="2" maxlength="30" required>
+                <span class="popup__input-error"></span>
+                <input type="text"  class="popup__input popup__input_type_value-link" placeholder="Ссылка на картинку" name="popup__link" id="popup__link" required>
+                <span class="popup__input-error ">Введите адрес сайта</span>
+                <button type="submit"  class="popup__button popup__button-save popup__button-save_type_mesto" name="submit">Создать</button>
             </form>
             <button type="button" class="popup__close-popup popup__close-popup_type_mesto"></button>
          </div>
@@ -76,5 +80,6 @@
        </template>
        <script src="./js/card.js/card.js"></script>
       <script src="./js/scripts/index.js"></script>
+      <script src="./js/validate.js/validate.js"></script>
   </body>
 </html>

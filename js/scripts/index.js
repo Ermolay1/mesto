@@ -26,17 +26,43 @@ const cardTemplate = document
  const popupImag = document.querySelector('.popup_type_image');
  const nameImage = popupImag.querySelector('.popup__image-name');
  const image = popupImag.querySelector('.popup__image');
-
+ const popups = document.querySelector('.popup');
 
 
 function openPopup(popup){
   popup.classList.add('popup_opened');
+   document.addEventListener('keydown', closePopupByEsc);
 } ;
 
 
 function closePopup(popup){
-  popup.classList.remove('popup_opened')
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByEsc);
 };
+
+
+function closePopupByEsc(evt) {
+  if (evt.key === 'Escape' || evt.key === 'Esc' || evt.keyCode === '27') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  };
+};
+
+//
+
+// Закрытие попапов кликом по оверлею или крестику
+/*
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup)
+    }
+    if (evt.target.classList.contains('popup__close-popup')) {
+      closePopup(popup)
+    }
+  });
+});
+*/
 
    profilebuttun.addEventListener('click',function() {
        openPopup(profilepopup);

@@ -19,7 +19,7 @@
         width: 238px;
         height: 14px;
         padding-bottom: 13px;
-        margin-bottom: 30px;
+        margin-bottom: auto;
     }
     .popup__input:nth-child(2) {
         margin-bottom: 45px;
