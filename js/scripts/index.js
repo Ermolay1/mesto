@@ -26,18 +26,18 @@ const cardTemplate = document
  const popupImag = document.querySelector('.popup_type_image');
  const nameImage = popupImag.querySelector('.popup__image-name');
  const image = popupImag.querySelector('.popup__image');
- const popups = document.querySelector('.popup');
+ const popups = document.querySelectorAll('.popup');
 
 
 function openPopup(popup){
   popup.classList.add('popup_opened');
-   document.addEventListener('keydown', closePopupByEsc);
+   document.addEventListener('keyup', closePopupByEsc);
 } ;
 
 
 function closePopup(popup){
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closePopupByEsc);
+  document.removeEventListener('keyup', closePopupByEsc);
 };
 
 
@@ -47,22 +47,15 @@ function closePopupByEsc(evt) {
     closePopup(openedPopup);
   };
 };
-
-//
-
-// Закрытие попапов кликом по оверлею или крестику
-/*
+ 
 popups.forEach((popup) => {
-  popup.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup_opened')) {
-      closePopup(popup)
-    }
-    if (evt.target.classList.contains('popup__close-popup')) {
-      closePopup(popup)
-    }
+  popup.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-popup')) {
+  closePopup(popup);
+  }
+  })
   });
-});
-*/
+
 
    profilebuttun.addEventListener('click',function() {
        openPopup(profilepopup);
@@ -73,7 +66,7 @@ popups.forEach((popup) => {
    profileClosePopup.addEventListener('click',function() {
     closePopup(profilepopup);
   });
-   
+
 
 function save(e) {
    e.preventDefault();
