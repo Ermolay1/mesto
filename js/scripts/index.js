@@ -50,7 +50,7 @@ function closePopupByEsc(evt) {
  
 popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-popup')) {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
   closePopup(popup);
   }
   })
@@ -63,9 +63,6 @@ popups.forEach((popup) => {
      inputDescription.value = profileSubtitle.textContent;  
    }
    );
-   profileClosePopup.addEventListener('click',function() {
-    closePopup(profilepopup);
-  });
 
 
 function save(e) {
@@ -75,15 +72,11 @@ function save(e) {
    closePopup(profilepopup);
 };
 
-buttonSave.addEventListener('click', save);
+buttonSave.addEventListener('submit', save);
 
 openElement.addEventListener('click', function (){
   openPopup(popupElement);
    });
-
-   closeElement.addEventListener('click', function() {
-     closePopup(popupElement);
-    });
     
     function deleteCard(evt) {
       evt.target.closest(".element").remove();
@@ -115,10 +108,6 @@ openElement.addEventListener('click', function (){
     
       cardImage.addEventListener('click', () => {
       openImagePopup(cardImage);
-     })
-
-     closeImage.addEventListener('click', function () {
-      closePopup(popupImag);
      });
        
       deleteButton.addEventListener('click', deleteCard);
