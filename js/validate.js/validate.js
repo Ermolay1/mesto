@@ -29,7 +29,7 @@ const hideInputError = (formElement, inputElement, settings) => {
 
 const checkInputValidity = (formElement, inputElement, settings) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(formElement, inputElement, inputElement.validationMessage, settings);
   } else {
     hideInputError(formElement, inputElement, settings);
   }
@@ -43,21 +43,21 @@ function setEventListeners (formElement, settings) {
 
   formElement.addEventListener('reset', () => {
     setTimeout(() => {
-     toggleButtonState(inputList, buttonElement);
+     toggleButtonState(inputList, buttonElement, settings);
     }, 0);
   });
 
   inputList.forEach(inputElement => {
     inputElement.addEventListener('input', function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formElement, inputElement, settings);
+      toggleButtonState(inputList, buttonElement, settings);
     });
   });
 };
 
 
 function enableValidation(settings) {
-  const formList = Array.from(document.querySelectorAll(variables.formSelector));
+  const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', function(e){
       e.preventDefault();
@@ -69,7 +69,7 @@ function enableValidation(settings) {
 
 };
 
-enableValidation(variables);
+
 
 function hasInvalidInput (inputList) {
   return inputList.some((inputElement) => {
@@ -77,12 +77,13 @@ function hasInvalidInput (inputList) {
   });
 };
 
-function toggleButtonState(inputList, buttonElement) {
+function toggleButtonState(inputList, buttonElement, settings) {
   if (hasInvalidInput(inputList)) {
     buttonElement.disabled = true;
-    buttonElement.classList.add(variables.inactiveButtonClass);
+    buttonElement.classList.add(settings.inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
-    buttonElement.classList.remove(variables.inactiveButtonClass);
+    buttonElement.classList.remove(settings.inactiveButtonClass);
   };
 }
+enableValidation(variables);
