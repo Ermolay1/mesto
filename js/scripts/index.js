@@ -72,7 +72,7 @@ function save(e) {
    closePopup(profilepopup);
 };
 
-buttonSave.addEventListener('submit', save);
+popupForm.addEventListener('submit', save);
 
 openElement.addEventListener('click', function (){
   openPopup(popupElement);
