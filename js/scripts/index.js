@@ -8,7 +8,7 @@ const inputName = document.querySelector('.popup__input_value_name');
 const profileTitle = document.querySelector('.profile__title');
 const inputDescription = document.querySelector('.popup__input_value_description');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const popupForm = document.querySelector('.popup__form');
+const popupForm = document.querySelector('.popup__form-profile');
 const cardsContainer = document.querySelector('.elements');
 const cardTemplate = document
                      .querySelector('.element__cards')
