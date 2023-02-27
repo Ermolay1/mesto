@@ -1,4 +1,52 @@
- const profilepopup = document.querySelector('.popup_type_profile');
+import Card from './Card.js';
+
+const  initialCards= [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+
+const config ={
+  selectorElements: '.elements',
+  selectorElementCards: '.element__cards',
+}
+
+const element = document.querySelector(config.selectorElements);
+
+for (const initialCard of  initialCards) {
+  const card = new Card(config.selectorElementCards, initialCard);
+  const element = card.getElement();
+  
+}
+
+
+
+
+
+
+/*const profilepopup = document.querySelector('.popup_type_profile');
  const profilebuttun = document.querySelector('.profile__edit-button');
  
  const profileClosePopup = profilepopup.querySelector('.popup__close-popup');
@@ -138,7 +186,7 @@ openElement.addEventListener('click', function (){
         closePopup(popupElement);
         e.target.reset();
      })
-
+*/
     
 
 
