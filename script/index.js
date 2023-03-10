@@ -1,4 +1,4 @@
-import Card from './Card.js'; // незнаю почему если убираю в названии .js не поключается
+import Card from './Card.js'; // я убрал но у меня на компе на live server не работает с одним а сохронил в git там все работает у меня просто полтергейс
 import FormValidator from './FormValidate.js';
 import {initialCards} from './cards.js';
 

@@ -3,7 +3,7 @@
     width: 18px;
     height: 18px;
     position: relative;
-    bottom: calc(361px - 20px - 18px);
+    bottom: calc(361px - 20px - 30px);
     margin-left: calc(282px - 20px - 18px);
     background-repeat: no-repeat;
     background-color: transparent;
