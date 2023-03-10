@@ -1,6 +1,6 @@
-import Card from './Card.js.js'; // незнаю почему если убираю в названии .js не поключается
+import Card from './Card.js'; // незнаю почему если убираю в названии .js не поключается
 import FormValidator from './FormValidate.js';
-import { initialCards } from './cards.js';
+import {initialCards} from './cards.js';
 
 const config = {
   formSelector: '.popup__form',
