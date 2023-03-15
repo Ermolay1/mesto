@@ -72,6 +72,7 @@ buttonOpenPopupProfile.addEventListener("click", () => {
 
 buttonOpenPopupElement.addEventListener("click", () => {
   popupNewCard.open();
+  elementFormValidator._disableSubmitButton();
 });
 
 const profileFormValidator = new FormValidate(config, formProfile);

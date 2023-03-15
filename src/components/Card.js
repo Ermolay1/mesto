@@ -11,12 +11,12 @@ export default class Card{
     };
 
     _getTemplate() {
-      const cardElement = document
+      const card = document
                  .querySelector(this._templateSelector)
                  .content.querySelector(".element")
                  .cloneNode("true");
   
-      return cardElement;
+      return card;
     };
     
     generateCard = () => {
