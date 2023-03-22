@@ -8,4 +8,9 @@ const formProfile = document.querySelector('.popup__form-profile');
 const inputName = formProfile.querySelector('.popup__input_value_name');
 const inputDescription = formProfile.querySelector('.popup__input_value_description');
 
-export { formElementCard, buttonOpenPopupElement, buttonOpenPopupProfile, inputName, inputDescription, formProfile};
+const popupAvatar = document.querySelector('.popup_type_profile-avatar');
+const formAvatar = popupAvatar.querySelector('.popup__form');
+const buttonAvatar = document.querySelector('.profile__button-avatar');
+const avatar = document.querySelector('.profile__image');
+
+export { formElementCard, buttonOpenPopupElement, buttonOpenPopupProfile, inputName, inputDescription, formProfile, formAvatar, buttonAvatar,avatar};

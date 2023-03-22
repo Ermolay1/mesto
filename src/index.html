@@ -13,6 +13,8 @@
      <main class="content">
          <section class="profile">
             <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Фото Жак-Ив Кусто">
+            <button type="button" class="profile__button-avatar">
+            </button>
             <div class="profile__info">
                 <div class="profile__container">
                    <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -34,6 +36,17 @@
      <footer class="footer">
         <p class="footer__name">&copy;2020Mesto Russia</p>
      </footer>
+     <section class="popup popup_type_profile-avatar  ">
+      <div class="popup__container">
+         <h3 class="popup__title">Обновить&nbsp;аватар</h3>
+         <form name="formAvatar" class="popup__form " novalidate>
+              <input type="url"  class="popup__input popup__input_type_value-link" placeholder="Ссылка на картинку" name="link" id="popup-link" required>
+              <span class="popup__input-error popup-link-error ">Введите адрес сайта</span>
+             <button type="submit"  class="popup__button popup__button-avatar popup__button-save_type_avatar" name="submit">Сохранить</button>
+         </form>
+         <button type="button" class="popup__close popup__close-avatar popup__close-popup_type_avatar"></button>
+      </div>
+    </section>
        <section class="popup popup_type_profile ">
           <div class="popup__container">
              <h3 class="popup__title">Редактировать&nbsp;профиль</h3>
@@ -47,7 +60,7 @@
              <button type="button" class="popup__close popup__close-popup"></button>
           </div>
        </section>
-       <div class="popup popup_type_element">
+       <section class="popup popup_type_element">
          <div class="popup__container">
             <h3 class="popup__title">Новое&nbsp;место</h3>
             <form name="mestoForm" class="popup__form popup__form_type_mesto" novalidate>
@@ -59,7 +72,16 @@
             </form>
             <button type="button" class="popup__close popup__close-popup popup__close-popup_type_mesto"></button>
          </div>
-       </div>
+       </section>
+       <section class="popup popup_type_element-delete">
+         <div class="popup__container">
+            <h3 class="popup__title">Вы уверены?</h3>
+            <form name="deleteForm" action="#" class="popup__form popup__form_type_delete" novalidate>
+               <button type="submit" class="popup__button popup__button-save">Да</button>
+            </form>
+            <button type="button" class="popup__close popup__close-delete"></button>
+         </div>
+       </section>
        <section class="popup popup_type_image">
          <figure class="popup__figure">
             <button type="button" class="popup__close popup__button-close"></button>
@@ -73,6 +95,7 @@
             <div class="element__column">
                  <h2 class="element__text">text</h2>
                  <button type="button" class="element__like"></button>
+                 <span class="element__likes-number"></span>
             </div>
             <button type="button" class="element__delete-element"></button>
         </li>
