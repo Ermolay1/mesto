@@ -7,7 +7,6 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import FormValidate from "../components/FormValidate.js";
 import UserInfo from "../components/UserInfo.js";
 import { config } from "../script/config.js";
-import {api} from "../components/Api.js";
 import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 import {
    formElementCard,
@@ -20,6 +19,7 @@ import {
    buttonAvatar,
    formAvatar,
 } from "../script/consts.js";
+import {api} from "../components/Api.js";
 
 
 let userId;
@@ -86,7 +86,6 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
  avatarPopop.setEventListeners();
 
  buttonAvatar.addEventListener('click', () => {
-  formAvatarValidator.toggleButtonState();
   avatarPopop.open();
  });
 
@@ -105,7 +104,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
     templateSelector: '.element__cards',
     userId: userId,
     handleCardClick: (name, link) => {
-      openImagePopup.open(name, link);
+      imagePopup.open(name, link);
     },
     handleDeleteIconClick: (cardId) => {
       deleteCardPopup.open();
@@ -175,7 +174,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
    elementPopup.setEventListeners();
 
    buttonOpenPopupElement.addEventListener('click', () => {
-    elementFormValidator.toggleButtonState();
+  
     elementPopup.open();
    })
 

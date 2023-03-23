@@ -55,7 +55,7 @@ export default class Api {
     }
     getUserInfo() {
         return fetch(`${this._baseUrl}/user/me`, {
-            headers: this._headers
+            headers: this._headers,
         })
         .then(res => this._parseResponse(res));
     }
@@ -84,6 +84,7 @@ editAvatar(data) {
   }
 }
 
+  
 const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
     headers: {
