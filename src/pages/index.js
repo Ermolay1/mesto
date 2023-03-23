@@ -19,8 +19,15 @@ import {
    buttonAvatar,
    formAvatar,
 } from "../script/consts.js";
-import {api} from "../components/Api.js";
-
+import Api from "../components/Api.js";
+ 
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
+  headers: {
+    authorization: '71ce217b-0d84-4894-b27b-2d906663c6db',
+    'Content-Type': 'application/json'
+  }
+}); 
 
 let userId;
 
