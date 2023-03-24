@@ -87,7 +87,6 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
  avatarPopop.setEventListeners();
 
  buttonAvatar.addEventListener('click', () => {
-  avatarFormValidator._toggleButtonState();
   avatarPopop.open();
  });
 
