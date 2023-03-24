@@ -19,15 +19,9 @@ import {
    buttonAvatar,
    formAvatar,
 } from "../script/consts.js";
-import Api from "../components/Api.js";
+import {api} from "../components/Api.js";
  
-const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
-  headers: {
-    authorization: '71ce217b-0d84-4894-b27b-2d906663c6db',
-    'Content-Type': 'application/json'
-  }
-}); 
+
 
 let userId;
 
@@ -49,11 +43,11 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
 
     const profilePopup = new PopupWithForm({
       popupSelector: '.popup_type_profile ',
-      handleFormSubmit: (dataForm) => {
+      handleFormSubmit: (data) => {
         profilePopup.loading(true);
-        api.editUserInfo(dataForm)
-         .then((dataForm) => {
-          userInfo.setUserInfo(dataForm);
+        api.editUserInfo(data)
+         .then((data) => {
+          userInfo.setUserInfo(data);
           profilePopup.close();
          })
          .catch((err) => {
@@ -93,6 +87,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
  avatarPopop.setEventListeners();
 
  buttonAvatar.addEventListener('click', () => {
+  avatarFormValidator._toggleButtonState();
   avatarPopop.open();
  });
 
@@ -181,7 +176,6 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
    elementPopup.setEventListeners();
 
    buttonOpenPopupElement.addEventListener('click', () => {
-  
     elementPopup.open();
    })
 
@@ -196,66 +190,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
 
    const avatarFormValidator = new FormValidate(config, formAvatar);
    avatarFormValidator.enableValidation();
-/*const popupWithImage = new PopupWithImage('.popup_type_image');
-popupWithImage.setEventListeners();
 
-function createCard(item) {
-  const card = new Card(item, ".element__cards", {
-    handleCardClick: () => {
-      popupWithImage.open(item);
-    },
-  });
-  return card.generateCard();
-}
-
-const cardList = new Section( 
-  {
-  items: initialCards,
-  renderer: (item) => {
-    cardList.addItem(createCard(item));
-  },
-},
-  ".elements"
-);
-cardList.renderItems();
-
-const popupNewCard = new PopupWithForm('.popup_type_element', {
-  handleFormSubmit: (item) => {
-    cardList.addItem(createCard(item));
-  },
-});
-popupNewCard.setEventListeners();
-
-const userInfo = new UserInfo({
-  nameSelector: ".profile__title",
-  descriptionSelector: ".profile__subtitle",
-});
-
-const popupProfile = new PopupWithForm(".popup_type_profile", {
-  handleFormSubmit: (item) => {
-    userInfo.setUserInfo(item);
-  },
-});
-
-popupProfile.setEventListeners();
-
-buttonOpenPopupProfile.addEventListener("click", () => {
-  const userData = userInfo.getUserInfo();
-  inputName.value = userData.userName;
-  inputDescription.value = userData.userDescription;
-  popupProfile.open();
-});
-
-buttonOpenPopupElement.addEventListener("click", () => {
-  popupNewCard.open();
-  elementFormValidator._disableSubmitButton();
-});
-
-const profileFormValidator = new FormValidate(config, formProfile);
-const elementFormValidator = new FormValidate(config, formElementCard);
-
-profileFormValidator.enableValidation();
-elementFormValidator.enableValidation();*/
 
 
 

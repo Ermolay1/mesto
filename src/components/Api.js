@@ -9,7 +9,7 @@ export default class Api {
             return res.json();
         }
         return Promise.reject(`Ошибка: ${res.status}`)
-    }
+    };
 
     getInitialCards() {
         return fetch(`${this._baseUrl}/cards`, {
@@ -28,7 +28,7 @@ export default class Api {
             })
         })
         .then(res => this._parseResponse(res));
-    }
+    };
 
     deleteCard(cardId) {
         return fetch(`${this._baseUrl}/cards/${cardId}`, {
@@ -36,7 +36,7 @@ export default class Api {
             headers: this._headers
         })
         .then(res => this._parseResponse(res));
-    }
+    };
 
     setLike(cardId) {
         return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
@@ -44,7 +44,7 @@ export default class Api {
             headers: this._headers
         })
            .then(res => this._parseResponse(res));
-    }
+    };
 
     deleteLike(cardId) {
         return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
@@ -52,36 +52,45 @@ export default class Api {
             headers: this._headers
         })
            .then(res => this._parseResponse(res));
-    }
+    };
     getUserInfo() {
         return fetch(`${this._baseUrl}/users/me`, {
-            headers: this._headers,
+            headers: this._headers
+        
         })
         .then(res => this._parseResponse(res));
-    }
+    };
 
     editUserInfo(data) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-              name: data.username,
-              about: data.description
+              name: data.name,
+              about: data.about
             })
     }) 
     .then(res => this._parseResponse(res));
-}
+};
 
 editAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar: data.avatar
+        avatar: data.link
       })
     })
       .then(res => this._parseResponse(res));
-  }
+  };
 }
+const api = new Api({
+    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
+    headers: {
+      authorization: '71ce217b-0d84-4894-b27b-2d906663c6db',
+      'Content-Type': 'application/json'
+    }
+  }); 
 
+  export {api};
  
