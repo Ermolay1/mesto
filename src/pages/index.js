@@ -70,8 +70,8 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
   handleFormSubmit: (data) => {
     avatarPopop.loading(true);
     api.editAvatar(data)
-      .then((data) => {
-        avatar.src = data.avatar;
+     .then((data) => {
+        userInfo.setUserInfo(data);
         avatarPopop.close();
       })
       .catch((err) => {
@@ -87,6 +87,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
  avatarPopop.setEventListeners();
 
  buttonAvatar.addEventListener('click', () => {
+  avatarFormValidator.resetValidationMessage();
   avatarPopop.open();
  });
 
@@ -175,6 +176,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
    elementPopup.setEventListeners();
 
    buttonOpenPopupElement.addEventListener('click', () => {
+    elementFormValidator.resetValidationMessage();
     elementPopup.open();
    })
 
