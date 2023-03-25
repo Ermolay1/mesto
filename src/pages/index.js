@@ -188,7 +188,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
    elementFormValidator.enableValidation();
 
    const avatarFormValidator = new FormValidate(config, formAvatar);
-   avatarFormValidator.enableValidation();
+  
 
 
 
